@@ -131,6 +131,8 @@ function drawHeightMap() {
     }
 }
 
+init();
+generateHeightMap();
 generateButton.addEventListener('click', () => {
     init();
     generateHeightMap();
