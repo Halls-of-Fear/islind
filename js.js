@@ -4,9 +4,9 @@ const generateButton = document.getElementById('generateButton');
 
 const colors = {
     water: ['#0077be', '#00a7e6'],
-    land: ['#6b9d61', '#4c8a4e', '#2c5f2d'],
-    plains: ['#6b9d61', '#4c8a4e'],
-    forest: ['#6b9d61', '#4c8a4e', '#2c5f2d'],
+    land: ['#2c5f2d', '#4c8a4e', '#6b9d61'],
+    plains: ['#4c8a4e', '#6b9d61'],
+    forest: ['#2c5f2d', '#4c8a4e', '#6b9d61'],
     mountain: ['#ffffff', '#c7c7c7', '#8f8f8f']
 };
 
@@ -131,8 +131,6 @@ function drawHeightMap() {
     }
 }
 
-init();
-generateHeightMap();
 generateButton.addEventListener('click', () => {
     init();
     generateHeightMap();
