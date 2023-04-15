@@ -7,10 +7,10 @@ const colors = {
     land: ['#6b9d61', '#4c8a4e', '#2c5f2d'],
     plains: ['#6b9d61', '#4c8a4e'],
     forest: ['#6b9d61', '#4c8a4e', '#2c5f2d'],
-    mountain: ['#ffffff', '#c7c7c7', '#8f8f8f']
+    mountain: ['#8f8f8f', '#c7c7c7', '#ffffff']
 };
 
-const SIZE = 128;
+const SIZE = 512;
 const MAP_SIZE = SIZE + 1;
 const MAX_HEIGHT = 255;
 const MIN_HEIGHT = 0;
@@ -126,7 +126,7 @@ function drawHeightMap() {
             }
 
             ctx.fillStyle = color;
-            ctx.fillRect(x, y, 1, 1);
+            ctx.fillRect(x*4, y*4, 4, 4);
         }
     }
 }
