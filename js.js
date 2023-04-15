@@ -4,13 +4,13 @@ const generateButton = document.getElementById('generateButton');
 
 const colors = {
     water: ['#0077be', '#00a7e6'],
-    land: ['#6b9d61', '#4c8a4e', '#2c5f2d'],
     plains: ['#6b9d61', '#4c8a4e'],
-    forest: ['#6b9d61', '#4c8a4e', '#2c5f2d'],
-    mountain: ['#8f8f8f', '#c7c7c7', '#ffffff']
+    woods: ['#6b9d61', '#4c8a4e', '#2c5f2d'],
+    mountain: ['#8f8f8f', '#c7c7c7', '#ffffff'],
+    sand: ['#FAF2C3', '#F6E4AD']
 };
 
-const SIZE = 512;
+const SIZE = 1024;
 const MAP_SIZE = SIZE + 1;
 const MAX_HEIGHT = 255;
 const MIN_HEIGHT = 0;
@@ -111,28 +111,33 @@ function drawHeightMap() {
                 color = colors.water[0];
             } else if (height < 0.3) {
                 color = colors.water[1];
+            } else if (height < 0.45) {
+                color = colors.sand[0];
             } else if (height < 0.5) {
-                color = colors.land[0];
-            } else if (height < 0.7) {
-                color = colors.land[1];
-            } else if (height < 0.85) {
-                color = colors.land[2];
-            } else if (height < 0.9) {
+                color = colors.sand[1];
+            } else if (height < 0.6) {
+                color = colors.plains[0];
+            } else if (height < 0.65) {
+                color = colors.plains[1];
+            } else if (height < 0.7){
+                color = colors.woods[Math.floor(Math.random() * colors.woods.length)];
+            } else if (height < 0.8) {
                 color = colors.mountain[0];
-            } else if (height < 0.95) {
+            } else if (height < 0.85) {
                 color = colors.mountain[1];
             } else {
                 color = colors.mountain[2];
             }
 
             ctx.fillStyle = color;
-            ctx.fillRect(x*4, y*4, 4, 4);
+            ctx.fillRect(x, y, 1, 1);
         }
     }
 }
 
 init();
 generateHeightMap();
+
 generateButton.addEventListener('click', () => {
     init();
     generateHeightMap();

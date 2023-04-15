@@ -1,4 +1,32 @@
+body {
+  background: rgb(42,38,64);
+  background: linear-gradient(0deg, rgba(42,38,64,1) 0%, rgba(78,71,119,1) 50%, rgba(42,38,64,1) 100%);
+}
+
 #canvas {
-    border: 4px solid black;
+    display: block;
+    margin: calc(30vh - 128px) auto 0;
+    border: 4px solid #17103a;
+    border-radius: 4px;
     image-rendering: pixelated;
+  }
+
+  #generateButton {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #7566bd;
+    color: #17103a;
+    border: 4px solid #17103a;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  #generateButton:active {
+    background-color: #523eb6;
+    color: #0b0529;
+    border: 4px solid #0b0529;
+    transform: translateY(2px);
   }
