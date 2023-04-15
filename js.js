@@ -10,7 +10,7 @@ const colors = {
     mountain: ['#8f8f8f', '#c7c7c7', '#ffffff']
 };
 
-const SIZE = 256;
+const SIZE = 512;
 const MAP_SIZE = SIZE + 1;
 const MAX_HEIGHT = 255;
 const MIN_HEIGHT = 0;
@@ -126,7 +126,7 @@ function drawHeightMap() {
             }
 
             ctx.fillStyle = color;
-            ctx.fillRect(x*2, y*2, 2, 2);
+            ctx.fillRect(x*4, y*4, 4, 4);
         }
     }
 }
